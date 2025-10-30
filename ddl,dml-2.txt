@@ -1,0 +1,19 @@
+
+ create table PLAYER (P_NAME VARCHAR2 (250), P_ID NUMBER (5) PRIMARY KEY, P_VALUE NUMBER (6) NOT NULL)
+
+ 
+
+ DESCRIBE PLAYER
+
+ 
+
+ create table ATHLETE (A_NAME VARCHAR2 (250), A_ID NUMBER (5) PRIMARY KEY)
+
+ 
+
+  DESCRIBE ATHLETE
+
+ 
+
+ ALTER TABLE PLAYER ADD (A_ID NUMBER (5))
+ alter table PLAYER add constraint FF foreign key (A_ID) references ATHLETE (A_ID);

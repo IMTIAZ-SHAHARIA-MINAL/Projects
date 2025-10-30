@@ -1,0 +1,33 @@
+
+create table customerinfo (c_id number(4) primary key, c_name varchar(120), phone varchar (100))
+
+describe customerinfo
+
+create table productinfo (p_id number(4) primary key, p_name varchar(120), price number (5,2))
+
+describe productinfo
+
+
+
+create table buy (p_id number(4), c_id number(4), constraint ci foreign key (c_id) references customerinfo (c_id))
+
+alter table buy modify (p_id number(4) primary key)
+
+describe buy
+
+create table oficerinfo (o_id number(4) primary key, o_name varchar(120), zone varchar (100))
+rename oficerinfo to officerinfo
+
+describe officerinfo
+
+
+
+
+create table enquire (o_id number(4) primary key, c_id number(4), constraint cd foreign key (c_id) references customerinfo (c_id))
+
+describe enquire
+
+create table investigation (o_id number (4) primary key, p_id number (4), constraint p foreign key(p_id) references productinfo (p_id), p_name varchar2 (100), phone varchar2 (100), c_id number (4), constraint c foreign key (c_id) references customerinfo (c_id), c_name varchar2(120), price number (5,2))
+
+describe investigation
+

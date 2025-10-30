@@ -1,0 +1,32 @@
+create table Library1 (L_Id number(20) primary key, School_ID number(20), Job varchar2(10))
+
+describe Library1
+
+create table Member1 (M_ID number(20) primary key, MName varchar2(25), MDate Date)  
+
+describe Member1
+
+create table Has (L_ID number(20) primary key, M_ID number(20), constraint li foreign key (M_ID) references Member1 (M_ID))
+
+describe Has
+
+create table Book1 (Book_ID number(20) primary key, Book_Name varchar2(120), Block varchar (100), Self varchar(120))
+
+describe Book1
+
+create table Has1 (L_ID number(20) primary key, Book_ID number(20), constraint bi foreign key (Book_ID) references Book1 (Book_ID))
+
+describe Has1
+
+create table School1 (School_ID number(20) primary key, S_Name varchar(120), Email varchar(20), S_Date date, S_B_Number number(20), City varchar2(20), Country varchar(20), phone varchar (100))
+
+describe School1
+
+create table Employee1 (Emp_No number(20) primary key,E_Name varchar2(25),E_Job varchar(20),Comm number(25),Joining_Date date,Dept_Number number(30),Salary number(10),Building_Number number(25),
+phone varchar (10))
+
+describe Employee1
+
+create table Has2 (School_ID number(4), Emp_No number(4), constraint ei foreign key (Emp_No) references Employee1 (Emp_No))
+
+describe Has2

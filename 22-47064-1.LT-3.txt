@@ -1,0 +1,37 @@
+1.select ename,sal,deptno
+  from emp
+  where job = upper ('manager')
+2.select ename || deptno "MERGED"
+  from emp
+  where length (ename)<=7
+3.select ename "Name"
+  from emp
+  where lower(job) like 'analyst'
+4.select ROUND(79.78),TRUNC(79.78)
+  from dual
+5.select (SYSDATE)
+  from emp
+6.select mod(comm,sal)
+  from emp
+  where job = 'MANAGER'
+7.select ename,(SYSDATE-hiredate)/30 MONTH
+  from emp
+  where INITCAP(ename) = 'Turner'
+8.select NEXT_DAY('12-OCT-22','WEDNESDAY')
+  from dual
+9.select MONTHS_BETWEEN(SYSDATE,hiredate)
+  from emp
+  where ename = 'BLAKE'
+10.select TO_CHAR(sal,'$9,999.99')
+   from emp
+   where ename = 'TURNER'
+11.select NVL(comm,0)*12 As "Annual Commission"
+   from emp
+12.select ename,job,sal,
+                      DECODE(job,'CLERK',sal+sal*0.02,
+                                  'PRESIDENT',sal+sal*0.05,
+                                  'SALSEMAN',sal+sal*0.07,sal)
+                                   As "Changed Salary"
+    from emp
+13.select INITCAP('I LOVE MY COUNTRY AND I LOVE MY JOB')
+   from dual

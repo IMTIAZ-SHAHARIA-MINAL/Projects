@@ -1,0 +1,32 @@
+1.select ename,job,hiredate,empno
+  from emp
+  where job = 'MANAGER'
+
+2.select ename,job,sal
+  from emp
+  where sal>comm
+
+3.select ename,job,sal
+  from emp
+  where sal<>1200
+
+4.select empno,job,sal
+  from emp
+  where sal between 1200 and 1400
+
+5.select ename
+  from emp
+  where ename LIKE '%T%'
+
+6.select ename,job
+  from emp
+  where ename not in ('SMITH','TURNER','SCOTT')
+
+7.select ename,job,hiredate
+  from emp
+  ORDER BY hiredate DESC
+
+8.select ename,job,sal,(5/100)*sal+sal Salary
+  from emp
+  where job IN ('MANAGER','PRESIDENT','ANALYST')
+  ORDER BY Salary

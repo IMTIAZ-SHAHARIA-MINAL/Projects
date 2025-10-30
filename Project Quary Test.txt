@@ -1,0 +1,67 @@
+Single Row Query
+select ename,sal AS SALARY,(5/100)*sal "5% INCREMENT"
+from emp
+
+Aggregate Function Query
+Show the Average sal from emp table when deptno are group in emp table
+select deptno, AVG(sal)
+from  emp
+GROUP BY deptno
+
+Aggregate Function Query
+show the deptno of employees where having the maximum sal>1900 
+select  deptno, max(sal)
+from emp
+GROUP BY deptno
+HAVING   max(sal)>1900
+
+Single Row Sub Query
+select ename, job, sal
+from emp
+where sal = (select MAX(sal)
+             from emp)
+
+Single Row Sub Query
+select deptno, AVG(sal)
+from emp
+GROUP BY deptno
+HAVING AVG(sal) > (select AVG(sal)
+                  from emp
+                  where deptno = 30)
+
+Multiple Row Sub Query
+select ename,hiredate
+from emp
+where hiredate > (select hiredate
+                  from emp
+                  where ename = 'SMITH')
+
+Multiple Row Sub Query
+select empno, ename, job
+from emp
+where sal > ANY (select AVG(sal)
+                 from emp 
+                 Group By deptno)
+
+Equijoin
+select e.empno, e.ename, e.deptno, d.deptno, d.loc
+from emp e, dept d
+where e.deptno = d.deptno
+
+Non-Equijoin
+select e.ename, e.sal, s.grade
+from emp e, salgrade s
+where e.sal
+Between s.losal  AND s.hisal
+
+Outerjoin
+select e.ename, d.deptno, d.dname
+from emp e, dept d
+where e.deptno(+) = d.deptno
+Order by e.deptno
+
+
+
+
+
+

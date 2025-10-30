@@ -1,0 +1,31 @@
+1.select*
+  from salgrade
+
+2.select deptno
+  from dept
+
+3.select ename,sal AS SALARY,(5/100)*sal "5% INCREMENT"
+  from emp
+
+4.select ename,sal AS SALARY,(5/100)*sal+sal "SALARY AFTER INCREMENT"
+  from emp
+
+5.select*
+  from emp
+  where ename = 'BLAKE'
+
+6.select ename || ' is hired on ' || hiredate || ' as a ' || job "EMPOLYEE INFO"
+  from emp
+  where ename in ('SMITH','ALLEN','WARD','JONES','MARTIN','BLAKE')
+
+7.select*
+  from emp
+  select*
+  from dept
+  select*
+  from salgrade
+  select*
+  from bonus
+
+8.select distinct job
+  from emp
