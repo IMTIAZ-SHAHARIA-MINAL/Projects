@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# CS0169: The field 'PassengerForm.guna2Button1' is never used
+dotnet_diagnostic.CS0169.severity = silent
